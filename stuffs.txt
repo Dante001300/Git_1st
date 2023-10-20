@@ -69,36 +69,38 @@ sudo apt install google-chrome-stable              // this is to update chrome
 
 -----------------------------------Git only-----------------------------------------------------
 git --version						check version
+
 git status						staging area
 
 git add README.md					to add name of file
+
 git add . 						to add everything
-git rm --cached	filename				remove all files from the staging area(unstracked)
 
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/Dante001300/All.git
-git push -u origin main
-
-			------------------------------------------------------
-			
+git rm --cached	filename				remove all files from the staging area(unstracked)	
+	
 git log							to see all the commit and its date/time, author
+
 git log --oneline					better to see all logs
 
 git checkout IDofCommit(from git log)			go back in time to previous commit
+
 git checkout master					go back into the future(to the lastest commit)
 
 git revert IDofcommit					go back in time to 1 commit only 
+
 git checkout master + git revert ID0frevertedID		to revert a revert(first go to master then git revert ID from log)
 
 get reset --hard IDname					reset to the commitID(permanently)
 
 touch .gitignore					create a file name .gitignore (to a file we want)
+
 	inside .gitignore type in the file name to ignore that file hence untrack it
-git rm -r -cached					if git ignore doesn't work try this line it will remove all the cached
+git rm -r --cached					if git ignore doesn't work try this line it will remove all the cached
+
 foldername/*						to ignore an entire folder and its contents(inside .gitignore)
 
 To remove git init ----> rm -rf .git
+
 
 ---------------------------------------github---------------------------------after created a repository
 git init						go to source folder of the project(this will create .git file)
@@ -108,7 +110,12 @@ git pull origin master					to pull files from github(git pull is enough is it re
 git pull origin main					if the above code does not work 
 type q or z to exit git log when stuck
 
-------------git push using SSH(secure socket shell)----https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key and-adding-it-to-the-ssh-agent
+git checkout -b brandnamewhatever			To create a brand to push to github
+git checkout master					to go back to master brand
+git merge brandnamewatever				to merge master brand and brandnamewhatever
+push
+
+------------------------------git push using SSH(secure socket shell)----https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key and-adding-it-to-the-ssh-agent
 				
 				Generating a new SSH key
 ls -al ~/.ssh 						to see if existing SSH keys are present.
@@ -118,7 +125,11 @@ ssh-keygen -t ed25519 -C "tdante95@gmail.com"		generate ssh key
 eval "$(ssh-agent -s)"					Start the ssh-agent in the background.
 ssh-add ~/.ssh/id_ed25519				Add your SSH private key to the ssh-agent.
 cat ~/.ssh/id_ed25519.pub				to open the file that has the ssh key to copy it to the clipboard
+git init
+git remote add origin git@github.com:Dante001300/Git_1st.git		makesure the URL is SSH
+git add .
+git commit -m "whatever"
 git push -u origin master or main			-u to remember the brand so next time just type git push
 
-
-
+also if you don't see the file switch brand from master to main or main to master
+							Done
